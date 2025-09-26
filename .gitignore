@@ -1,0 +1,9 @@
+# Archivos y directorios generados por Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*._override.tf
+*.auto.tfvars

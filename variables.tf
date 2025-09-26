@@ -23,4 +23,12 @@ variable "public_subnet_c_cidr" {
   type        = string
 }
 
-# changed
+variable "ssh_key" {
+  description = "Provides custom public SSH key."
+  type        = string
+}
+
+variable "ec2_ami" {
+  description = "AMI ID para la instancia EC2."
+  type        = string
+}
