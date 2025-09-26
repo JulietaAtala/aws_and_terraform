@@ -22,3 +22,5 @@ variable "public_subnet_c_cidr" {
   description = "Bloque CIDR para la subred pública en us-east-1c."
   type        = string
 }
+
+# changed
