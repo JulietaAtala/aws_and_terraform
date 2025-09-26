@@ -26,6 +26,7 @@ variable "public_subnet_c_cidr" {
 variable "ssh_key" {
   description = "Provides custom public SSH key."
   type        = string
+  default     = "value"
 }
 
 variable "ec2_ami" {
