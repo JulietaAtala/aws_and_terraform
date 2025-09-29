@@ -8,6 +8,12 @@ variable "vpc_cidr_block" {
   type        = string
 }
 
+variable "availability_zones" {
+  description = "Lista de Zonas de Disponibilidad para las subredes (e.g., [us-east-1a, us-east-1b, us-east-1c])."
+  type        = list(string)
+  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+}
+
 variable "public_subnet_a_cidr" {
   description = "Bloque CIDR para la subred pública en us-east-1a."
   type        = string
