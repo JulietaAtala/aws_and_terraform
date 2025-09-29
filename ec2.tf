@@ -21,18 +21,18 @@ resource "aws_security_group" "cmtr_sg" {
   tags = local.tags
 }
 
-resource "aws_instance" "cmtr_ec2" {
-  ami           = var.ec2_ami
-  instance_type = "t2.micro"
-  key_name      = aws_key_pair.cmtr_keypair.key_name
+#resource "aws_instance" "cmtr_ec2" {
+#ami           = var.ec2_ami
+#instance_type = "t2.micro"
+#key_name      = aws_key_pair.cmtr_keypair.key_name
 
-  vpc_security_group_ids = [aws_security_group.cmtr_sg.id]
+#vpc_security_group_ids = [aws_security_group.cmtr_sg.id]
 
-  subnet_id = aws_subnet.red_public_a.id
+#subnet_id = aws_subnet.red_public_a.id
 
-  associate_public_ip_address = true
+#associate_public_ip_address = true
 
-  tags = merge(local.tags, {
-    Name = "${local.name_for}-ec2"
-  })
-}
+#tags = merge(local.tags, {
+#  Name = "${local.name_for}-ec2"
+#})
+#}

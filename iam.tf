@@ -21,7 +21,7 @@ resource "aws_iam_policy" "cmtr-m68g13qx-iam-policy" {
   })
 
   tags = {
-    Project   = local.name_for
+    Project   = var.project_name_prefix
     Terraform = "true"
   }
 }
@@ -41,7 +41,7 @@ resource "aws_iam_role" "iam_role" {
     ]
   })
   tags = {
-    Project   = local.name_for
+    Project   = var.project_name_prefix
     Terraform = "true"
   }
 }
