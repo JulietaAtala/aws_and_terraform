@@ -95,21 +95,21 @@ resource "aws_security_group_rule" "private_http_sg_icmp" {
 
 resource "aws_network_interface_sg_attachment" "public_ssh_attach" {
   security_group_id    = aws_security_group.ssh_sg.id
-  network_interface_id = var.public_instance_id
+  network_interface_id = data.aws_instance.public.network_interface_id
 }
 
 resource "aws_network_interface_sg_attachment" "public_http_attach" {
   security_group_id    = aws_security_group.public_http_sg.id
-  network_interface_id = var.public_instance_id
+  network_interface_id = data.aws_instance.public.network_interface_id
 }
 
 
 resource "aws_network_interface_sg_attachment" "private_ssh_attach" {
   security_group_id    = aws_security_group.ssh_sg.id
-  network_interface_id = var.private_instance_id
+  network_interface_id = data.aws_instance.private.network_interface_id
 }
 
 resource "aws_network_interface_sg_attachment" "private_http_attach" {
   security_group_id    = aws_security_group.private_http_sg.id
-  network_interface_id = var.private_instance_id
+  network_interface_id = data.aws_instance.private.network_interface_id
 }

@@ -1,9 +1,10 @@
-data "aws_instance" "public_instance" {
+data "aws_instance" "public" {
   instance_id = var.public_instance_id
 }
 
-data "aws_instance" "private_instance" {
+data "aws_instance" "private" {
   instance_id = var.private_instance_id
 }
+
 
 
