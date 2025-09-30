@@ -80,3 +80,24 @@ variable "ssh_key_name" {
   type        = string
   default     = "cmtr-m68g13qx-keypair"
 }
+
+variable "vpc_name" {
+  description = "Nombre de la VPC"
+  type        = string
+}
+
+variable "public_subnet_name" {
+  description = "Name tag of the public subnet to discover (e.g., cmtr-m68g13qx-public-subnet-1)."
+  type        = string
+}
+
+variable "security_group_name" {
+  description = "Name tag of the security group to discover (e.g., cmtr-m68g13qx-sg)."
+  type        = string
+}
+
+variable "instance_type" {
+  description = "EC2 instance type to provision."
+  type        = string
+  default     = "t3.micro"
+}
