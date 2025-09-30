@@ -1,11 +1,12 @@
 
 resource "aws_vpc" "red_vpc" {
-  cidr_block = var.vpc_cidr_block
+  cidr_block           = var.vpc_cidr_block
+  enable_dns_hostnames = true
+
   tags = merge(local.tags, {
     Name = "${local.name_for}-01-vpc"
   })
 }
-# changed
 
 resource "aws_internet_gateway" "red_igw" {
   vpc_id = aws_vpc.red_vpc.id
@@ -44,6 +45,7 @@ resource "aws_subnet" "red_public_c" {
 
 resource "aws_route_table" "red_rt" {
   vpc_id = aws_vpc.red_vpc.id
+
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.red_igw.id

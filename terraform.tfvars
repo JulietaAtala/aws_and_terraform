@@ -1,5 +1,5 @@
 project_name_prefix = "cmtr-m68g13qx"
-vpc_id              = "vpc-0af56163978b8973b"
+#vpc_id              = "vpc-07eb6fb25ae570eca"
 
 vpc_cidr_block = "10.10.0.0/16"
 
@@ -11,5 +11,7 @@ ec2_ami = "ami-08982f1c5bf93d976"
 
 allowed_ip_range = ["18.153.146.156/32", "186.13.120.173/32"]
 
-public_instance_id  = "i-0ad2948263107e6e3"
-private_instance_id = "i-0bae336f280f2661a"
+aws_region   = "us-east-1"
+project_id   = "cmtr-m68g13qx"
+state_bucket = "cmtr-m68g13qx-tf-state-1759233674"
+state_key    = "infra.tfstate"

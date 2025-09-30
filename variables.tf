@@ -61,3 +61,24 @@ variable "private_instance_id" {
   description = "ID de la interfaz de red (ENI) de la instancia privada (i-0bae336f280f2661a)."
   type        = string
 }
+
+variable "aws_region" {
+  description = "Region de trabajo"
+  type        = string
+}
+
+variable "project_id" {
+  description = "ID for Project"
+  type        = string
+}
+
+variable "state_bucket" {
+  description = "Estado del S3 Bucket"
+  type        = string
+}
+
+variable "state_key" {
+  description = "Estado de la key"
+  type        = string
+}
+
