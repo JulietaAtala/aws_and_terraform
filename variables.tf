@@ -52,15 +52,7 @@ variable "allowed_ip_range" {
   default     = ["18.153.146.156/32"]
 }
 
-variable "public_instance_id" {
-  description = "ID de la interfaz de red (ENI) de la instancia pública (cmtr-m68g13qx-public-instance)."
-  type        = string
-}
 
-variable "private_instance_id" {
-  description = "ID de la interfaz de red (ENI) de la instancia privada (i-0bae336f280f2661a)."
-  type        = string
-}
 
 variable "aws_region" {
   description = "Region de trabajo"
