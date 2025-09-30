@@ -1,5 +1,5 @@
 resource "aws_security_group" "cmtr_sg" {
-  name        = "${local.name_for}-sg"
+  name        = "${var.project_id}-sg"
   description = "Allow SSH inbound traffic"
   vpc_id      = aws_vpc.red_vpc.id
 

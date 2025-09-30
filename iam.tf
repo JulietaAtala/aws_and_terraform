@@ -1,9 +1,9 @@
 resource "aws_iam_group" "iam_group" {
-  name = "${local.name_for}-iam-group"
+  name = "${var.project_id}-iam-group"
 }
 
 resource "aws_iam_policy" "cmtr-m68g13qx-iam-policy" {
-  name        = "${local.name_for}-iam-policy"
+  name        = "${var.project_id}-iam-policy"
   description = "My example policy"
   policy = jsonencode({
     Version = "2012-10-17"
@@ -15,7 +15,7 @@ resource "aws_iam_policy" "cmtr-m68g13qx-iam-policy" {
           "s3:GetObject",
           "s3:DeleteObject"
         ]
-        Resource = "arn:aws:s3:::${local.name_for}-bucket-1759147576"
+        Resource = "arn:aws:s3:::${var.project_id}-bucket-1759147576"
       }
     ]
   })
@@ -27,7 +27,7 @@ resource "aws_iam_policy" "cmtr-m68g13qx-iam-policy" {
 }
 
 resource "aws_iam_role" "iam_role" {
-  name = "${local.name_for}-iam-role"
+  name = "${var.project_id}-iam-role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -52,6 +52,6 @@ resource "aws_iam_role_policy_attachment" "role_attach" {
 }
 
 resource "aws_iam_instance_profile" "my_instance_profile" {
-  name = "${local.name_for}-iam-instance-profile"
+  name = "${var.project_id}-iam-instance-profile"
   role = aws_iam_role.iam_role.name
 }

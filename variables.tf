@@ -74,3 +74,9 @@ variable "state_key" {
   type        = string
 }
 
+
+variable "ssh_key_name" {
+  description = "SSH key pair name for EC2 access"
+  type        = string
+  default     = "cmtr-m68g13qx-keypair"
+}

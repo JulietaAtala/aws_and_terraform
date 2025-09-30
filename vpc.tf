@@ -4,14 +4,14 @@ resource "aws_vpc" "red_vpc" {
   enable_dns_hostnames = true
 
   tags = merge(local.tags, {
-    Name = "${local.name_for}-01-vpc"
+    Name = "${var.project_id}-01-vpc"
   })
 }
 
 resource "aws_internet_gateway" "red_igw" {
   vpc_id = aws_vpc.red_vpc.id
   tags = merge(local.tags, {
-    Name = "${local.name_for}-01-igw"
+    Name = "${var.project_id}-01-igw"
   })
 }
 
@@ -20,7 +20,7 @@ resource "aws_subnet" "red_public_a" {
   cidr_block        = var.public_subnet_a_cidr
   availability_zone = "us-east-1a"
   tags = merge(local.tags, {
-    Name = "${local.name_for}-01-subnet-public-a"
+    Name = "${var.project_id}-01-subnet-public-a"
   })
 }
 
@@ -30,7 +30,7 @@ resource "aws_subnet" "red_public_b" {
   cidr_block        = var.public_subnet_b_cidr
   availability_zone = "us-east-1b"
   tags = merge(local.tags, {
-    Name = "${local.name_for}-01-subnet-public-b"
+    Name = "${var.project_id}-01-subnet-public-b"
   })
 }
 
@@ -39,7 +39,7 @@ resource "aws_subnet" "red_public_c" {
   cidr_block        = var.public_subnet_c_cidr
   availability_zone = "us-east-1c"
   tags = merge(local.tags, {
-    Name = "${local.name_for}-01-subnet-public-c"
+    Name = "${var.project_id}-01-subnet-public-c"
   })
 }
 
@@ -51,7 +51,7 @@ resource "aws_route_table" "red_rt" {
     gateway_id = aws_internet_gateway.red_igw.id
   }
   tags = merge(local.tags, {
-    Name = "${local.name_for}-01-rt"
+    Name = "${var.project_id}-01-rt"
   })
 }
 
