@@ -18,7 +18,10 @@ locals {
 
 
 data "aws_vpc" "selected" {
-    id = local.vpc_id
+  filter {
+    name   = "tag:Name"
+    values = ["cmtr-m68g13qx-vpc"]
+  }
 }
 
 
